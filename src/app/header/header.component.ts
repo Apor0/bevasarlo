@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { DataStorageService } from '../shared/data-storage.service';
+import { Data } from '@angular/router';
 @Component({
     selector:'app-header',
     templateUrl:'./header.component.html'
@@ -8,4 +10,11 @@ import { Component } from '@angular/core';
 
 export class HeaderComponent{
 
+    constructor(private dataStorageService: DataStorageService){}
+
+    onSaveData(){
+        this.dataStorageService.storeRecipes();
+    }
+
 }
+
